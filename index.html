@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body> 
+    <div align="center" id="card" >
+        <h1>Grading System</h1>
+        <p style="color: red; display: none;" id="errorMsg">haba, when it is not that you cannot see!</p>
+        <input type="number" placeholder="score" id="score">
+        <button onclick="checkGrade()">Check</button>
+        <div id="display">Result</div>
+    </div>
+    
+
+    <script>
+        function checkGrade() {
+            var userScore = document.getElementById('score').value
+            var newScore = Number(userScore)
+            if (userScore == ''){
+                errorMsg.style.display ='block'
+            } else{
+                errorMsg.style.display = 'none'
+                if(newScore >= 0 && newScore < 40) {
+                    console.log( 'F- failed');
+                    display.innerText = 'F- failed';
+                    
+                } else if (newScore >= 40 && newScore < 45) {
+                    console.log( 'E - you are lazy');
+                    display.innerText = ' E- poor';
+
+
+                }  else if (newScore >= 45 && newScore < 50) {
+                    console.log( 'D - you passed by luck');
+                    display.innerText = 'D - fair';
+
+
+                }   else if (newScore >= 50 && newScore < 60) {
+                    console.log( 'C - you passed');
+                    display.innerText = 'C - passed';
+                    
+
+                }  else if (newScore >= 60 && newScore < 70) {
+                    console.log( 'B - Good, you passed');
+                    display.innerText = 'B- Good';
+
+
+                }  else if (newScore >= 70 && newScore <= 100) {
+                    console.log( 'A - Congratulations, you passed!');
+                    display.innerText = 'A- excellent';
+                }
+
+
+
+            }
+        }
+    </script>
+</body>
+</html>
